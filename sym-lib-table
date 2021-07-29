@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name PatchV2)(type Legacy)(uri ${KIPRJMOD}/PatchV2.lib)(options "")(descr ""))
+  (lib (name PatchV2-rescue)(type Legacy)(uri ${KIPRJMOD}/PatchV2-rescue.lib)(options "")(descr ""))
+)

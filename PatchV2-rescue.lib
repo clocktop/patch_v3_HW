@@ -1,0 +1,34 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# 2908-05WB-MG-dk_Memory-Connectors-PC-Card-Sockets
+#
+DEF 2908-05WB-MG-dk_Memory-Connectors-PC-Card-Sockets J 0 40 Y Y 1 F N
+F0 "J" -500 500 60 H V C CNN
+F1 "2908-05WB-MG-dk_Memory-Connectors-PC-Card-Sockets" 0 -400 60 V V L CNN
+F2 "digikey-footprints:MicroSD_2908-05WB-MG" 200 200 60 H I L CNN
+F3 "http://multimedia.3m.com/mws/media/416257O/3mtm-card-connector-microsdtm-2900-series-ts2197.pdf" 200 300 60 H I L CNN
+F4 "3M5607CT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "2908-05WB-MG" 200 500 60 H I L CNN "MPN"
+F6 "Connectors, Interconnects" 200 600 60 H I L CNN "Category"
+F7 "Memory Connectors - PC Card Sockets" 200 700 60 H I L CNN "Family"
+F8 "http://multimedia.3m.com/mws/media/416257O/3mtm-card-connector-microsdtm-2900-series-ts2197.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/3m/2908-05WB-MG/3M5607CT-ND/1242498" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "CONN MICRO SD CARD PUSH-PUSH R/A" 200 1000 60 H I L CNN "Description"
+F11 "3M" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+P 11 0 1 0 -500 -550 -500 400 -300 400 -200 500 -100 500 -100 400 0 400 100 500 600 500 600 -550 -500 -550 f
+X DAT2 1 -600 300 100 R 50 50 1 1 B
+X CD/DAT3 2 -600 200 100 R 50 50 1 1 B
+X CMD 3 -600 100 100 R 50 50 1 1 B
+X VDD 4 -600 0 100 R 50 50 1 1 W
+X CLK 5 -600 -100 100 R 50 50 1 1 O
+X VSS 6 -600 -200 100 R 50 50 1 1 W
+X DAT0 7 -600 -300 100 R 50 50 1 1 B
+X DAT1 8 -600 -400 100 R 50 50 1 1 B
+X SHLD 9 -600 -500 100 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
