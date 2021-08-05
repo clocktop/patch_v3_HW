@@ -25,17 +25,6 @@ F 3 "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%
 	1    0    0    -1  
 $EndComp
 $Comp
-L PatchV2:OPA2349EA_250 U?
-U 1 1 60558AF9
-P 5225 1750
-F 0 "U?" H 5750 2150 60  0000 C CNN
-F 1 "OPA2349EA_250" H 6025 1200 60  0000 C CNN
-F 2 "PatchV2:OPA2349EA" H 6045 2090 60  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/opa2349.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1616192746637" H 6025 2131 60  0001 C CNN
-	1    5225 1750
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 6055C371
 P 4100 1750
@@ -95,20 +84,7 @@ F 3 "~" H 6025 875 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	5225 1550 5050 1550
-Wire Wire Line
 	5050 1550 5050 1175
-Wire Wire Line
-	5050 1175 7025 1175
-Wire Wire Line
-	7025 1175 7025 1650
-Wire Wire Line
-	7025 1650 6825 1650
-Wire Wire Line
-	6125 875  7025 875 
-Wire Wire Line
-	7025 875  7025 1175
-Connection ~ 7025 1175
 Wire Wire Line
 	5925 875  4325 875 
 Wire Wire Line
@@ -131,8 +107,6 @@ F 3 "" H 5025 2050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5025 2050 5025 2150
-Wire Wire Line
-	5025 2150 5225 2150
 Text Notes 8125 4050 0    75   ~ 0
 VDDA - 1.8V From power section LDO\nVCOM - 0.9V From power section LDO\nGNDA - GND for AFE and analog on uC, \n     join with GND near uC\n\nAll Rs 0.1% \nPlace deacap near each package\nSheild inputs with ground rail\nRemove ground plane from around INA gain resistor
 $Comp
@@ -158,8 +132,6 @@ F 3 "" H 5050 2525 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5050 2650 5225 2650
-Wire Wire Line
 	5050 2525 5050 2650
 Wire Wire Line
 	3800 2850 3800 2700
@@ -180,8 +152,6 @@ F 3 "~" H 5975 3275 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	5225 2850 5050 2850
-Wire Wire Line
 	5875 3275 5050 3275
 Wire Wire Line
 	5050 3275 5050 2850
@@ -194,21 +164,6 @@ Wire Wire Line
 	6950 3275 6950 2750
 Wire Wire Line
 	6950 2750 6825 2750
-$Comp
-L power:GNDA #PWR?
-U 1 1 6056C00B
-P 6925 2250
-F 0 "#PWR?" H 6925 2000 50  0001 C CNN
-F 1 "GNDA" H 6930 2077 50  0000 C CNN
-F 2 "" H 6925 2250 50  0001 C CNN
-F 3 "" H 6925 2250 50  0001 C CNN
-	1    6925 2250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6825 2150 6925 2150
-Wire Wire Line
-	6925 2150 6925 2250
 Wire Wire Line
 	6950 3275 6950 3500
 Wire Wire Line
@@ -220,12 +175,6 @@ Wire Wire Line
 	3450 1750 3675 1750
 Wire Wire Line
 	4250 1750 4325 1750
-Connection ~ 4775 1750
-Wire Wire Line
-	4775 1750 5225 1750
-Wire Wire Line
-	7025 1650 7275 1650
-Connection ~ 7025 1650
 Text HLabel 7275 1650 2    75   Output ~ 0
 AFE_CH1
 $Comp
@@ -330,28 +279,6 @@ F 1 "0.1uF" H 1267 3255 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0402_1005Metric" H 1175 3300 50  0001 C CNN
 F 3 "~" H 1175 3300 50  0001 C CNN
 	1    1175 3300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 60584069
-P 2650 2450
-F 0 "#PWR?" H 2650 2200 50  0001 C CNN
-F 1 "GNDA" H 2655 2277 50  0000 C CNN
-F 2 "" H 2650 2450 50  0001 C CNN
-F 3 "" H 2650 2450 50  0001 C CNN
-	1    2650 2450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 605849A7
-P 800 3500
-F 0 "#PWR?" H 800 3250 50  0001 C CNN
-F 1 "GNDA" H 805 3327 50  0000 C CNN
-F 2 "" H 800 3500 50  0001 C CNN
-F 3 "" H 800 3500 50  0001 C CNN
-	1    800  3500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -562,17 +489,6 @@ Wire Wire Line
 	6925 6200 6925 5675
 Wire Wire Line
 	6925 5675 6800 5675
-$Comp
-L power:GNDA #PWR?
-U 1 1 605A1129
-P 6900 5175
-F 0 "#PWR?" H 6900 4925 50  0001 C CNN
-F 1 "GNDA" H 6905 5002 50  0000 C CNN
-F 2 "" H 6900 5175 50  0001 C CNN
-F 3 "" H 6900 5175 50  0001 C CNN
-	1    6900 5175
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6800 5075 6900 5075
 Wire Wire Line
@@ -711,28 +627,6 @@ F 3 "~" H 1150 6225 50  0001 C CNN
 	1    1150 6225
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 605A1186
-P 2625 5375
-F 0 "#PWR?" H 2625 5125 50  0001 C CNN
-F 1 "GNDA" H 2630 5202 50  0000 C CNN
-F 2 "" H 2625 5375 50  0001 C CNN
-F 3 "" H 2625 5375 50  0001 C CNN
-	1    2625 5375
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 605A118C
-P 775 6425
-F 0 "#PWR?" H 775 6175 50  0001 C CNN
-F 1 "GNDA" H 780 6252 50  0000 C CNN
-F 2 "" H 775 6425 50  0001 C CNN
-F 3 "" H 775 6425 50  0001 C CNN
-	1    775  6425
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	775  6325 775  6375
 Wire Wire Line
@@ -810,25 +704,200 @@ F 3 "~" H 725 2250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L power:GNDA #PWR?
-U 1 1 60ABEA96
+L power:GND #PWR?
+U 1 1 61737AA7
 P 1050 2400
 F 0 "#PWR?" H 1050 2150 50  0001 C CNN
-F 1 "GNDA" H 1055 2227 50  0000 C CNN
+F 1 "GND" H 1055 2227 50  0000 C CNN
 F 2 "" H 1050 2400 50  0001 C CNN
 F 3 "" H 1050 2400 50  0001 C CNN
 	1    1050 2400
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GNDA #PWR?
-U 1 1 60ABEDB2
+L power:GND #PWR?
+U 1 1 61738138
+P 2650 2450
+F 0 "#PWR?" H 2650 2200 50  0001 C CNN
+F 1 "GND" H 2655 2277 50  0000 C CNN
+F 2 "" H 2650 2450 50  0001 C CNN
+F 3 "" H 2650 2450 50  0001 C CNN
+	1    2650 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61738743
+P 6950 2250
+F 0 "#PWR?" H 6950 2000 50  0001 C CNN
+F 1 "GND" H 6955 2077 50  0000 C CNN
+F 2 "" H 6950 2250 50  0001 C CNN
+F 3 "" H 6950 2250 50  0001 C CNN
+	1    6950 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6125 875  7025 875 
+Wire Wire Line
+	7025 875  7025 1175
+Wire Wire Line
+	5050 1175 7025 1175
+Connection ~ 7025 1650
+Connection ~ 7025 1175
+Wire Wire Line
+	7025 1175 7025 1650
+Wire Wire Line
+	7025 1650 6825 1650
+Wire Wire Line
+	7025 1650 7275 1650
+Connection ~ 4775 1750
+Wire Wire Line
+	5025 2150 5225 2150
+Wire Wire Line
+	5225 2850 5050 2850
+Wire Wire Line
+	5050 2650 5225 2650
+Wire Wire Line
+	4775 1750 5225 1750
+Wire Wire Line
+	5225 1550 5050 1550
+$Comp
+L PatchV2:OPA2349EA_250 U?
+U 1 1 60558AF9
+P 5225 1750
+F 0 "U?" H 5750 2150 60  0000 C CNN
+F 1 "OPA2349EA_250" H 6025 1200 60  0000 C CNN
+F 2 "PatchV2:OPA2349EA" H 6045 2090 60  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/opa2349.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1616192746637" H 6025 2131 60  0001 C CNN
+	1    5225 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6825 2150 6950 2150
+Wire Wire Line
+	6950 2150 6950 2250
+$Comp
+L power:GND #PWR?
+U 1 1 617654F8
+P 800 3500
+F 0 "#PWR?" H 800 3250 50  0001 C CNN
+F 1 "GND" H 805 3327 50  0000 C CNN
+F 2 "" H 800 3500 50  0001 C CNN
+F 3 "" H 800 3500 50  0001 C CNN
+	1    800  3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61765C3E
+P 775 6425
+F 0 "#PWR?" H 775 6175 50  0001 C CNN
+F 1 "GND" H 780 6252 50  0000 C CNN
+F 2 "" H 775 6425 50  0001 C CNN
+F 3 "" H 775 6425 50  0001 C CNN
+	1    775  6425
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61766D16
 P 1025 5325
 F 0 "#PWR?" H 1025 5075 50  0001 C CNN
-F 1 "GNDA" H 1030 5152 50  0000 C CNN
+F 1 "GND" H 1030 5152 50  0000 C CNN
 F 2 "" H 1025 5325 50  0001 C CNN
 F 3 "" H 1025 5325 50  0001 C CNN
 	1    1025 5325
 	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61767134
+P 2625 5375
+F 0 "#PWR?" H 2625 5125 50  0001 C CNN
+F 1 "GND" H 2630 5202 50  0000 C CNN
+F 2 "" H 2625 5375 50  0001 C CNN
+F 3 "" H 2625 5375 50  0001 C CNN
+	1    2625 5375
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 617674EA
+P 6900 5175
+F 0 "#PWR?" H 6900 4925 50  0001 C CNN
+F 1 "GND" H 6905 5002 50  0000 C CNN
+F 2 "" H 6900 5175 50  0001 C CNN
+F 3 "" H 6900 5175 50  0001 C CNN
+	1    6900 5175
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 617737FD
+P 2425 7200
+F 0 "C?" H 2517 7246 50  0000 L CNN
+F 1 "0.1uF" H 2517 7155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2425 7200 50  0001 C CNN
+F 3 "~" H 2425 7200 50  0001 C CNN
+	1    2425 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2425 7050 2425 7100
+$Comp
+L power:GND #PWR?
+U 1 1 617893F1
+P 2425 7400
+F 0 "#PWR?" H 2425 7150 50  0001 C CNN
+F 1 "GND" H 2430 7227 50  0000 C CNN
+F 2 "" H 2425 7400 50  0001 C CNN
+F 3 "" H 2425 7400 50  0001 C CNN
+	1    2425 7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2425 7300 2425 7400
+$Comp
+L power:VDDA #PWR?
+U 1 1 6178ECF5
+P 2425 6950
+F 0 "#PWR?" H 2425 6800 50  0001 C CNN
+F 1 "VDDA" H 2440 7123 50  0000 C CNN
+F 2 "" H 2425 6950 50  0001 C CNN
+F 3 "" H 2425 6950 50  0001 C CNN
+	1    2425 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2425 6950 2425 7050
+Connection ~ 2425 7050
+$Comp
+L power:VDD #PWR?
+U 1 1 61793D2C
+P 1725 6950
+F 0 "#PWR?" H 1725 6800 50  0001 C CNN
+F 1 "VDD" H 1740 7123 50  0000 C CNN
+F 2 "" H 1725 6950 50  0001 C CNN
+F 3 "" H 1725 6950 50  0001 C CNN
+	1    1725 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1725 7050 1725 6950
+Wire Wire Line
+	1725 7050 1975 7050
+Wire Wire Line
+	2175 7050 2425 7050
+$Comp
+L Device:Ferrite_Bead_Small FB?
+U 1 1 61774673
+P 2075 7050
+F 0 "FB?" V 1838 7050 50  0000 C CNN
+F 1 "600 Ohm" V 1929 7050 50  0000 C CNN
+F 2 "" V 2005 7050 50  0001 C CNN
+F 3 "~" H 2075 7050 50  0001 C CNN
+F 4 "490-1006-1-ND" V 2075 7050 50  0001 C CNN "DigiKey_PN"
+	1    2075 7050
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC

@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L PatchV2:STM32WB5MMGH6TR_1- U?
-U 1 1 605449E4
-P 2750 1350
-F 0 "U?" H 2800 1400 60  0000 C CNN
-F 1 "STM32WB5MMGH6TR_1-" H 4050 -850 60  0000 C CNN
-F 2 "PatchV2:SiP-LGA86" H 2750 1350 60  0001 C CNN
-F 3 "https://www.mouser.com/datasheet/2/389/stm32wb5mmg-1948585.pdf" H 2750 1350 60  0001 C CNN
-	1    2750 1350
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:LED_ARGB D?
 U 1 1 60540756
 P 10375 1250
@@ -49,11 +38,8 @@ S 10050 3975 925  1225
 U 605A6F24
 F0 "Havester and Power" 50
 F1 "HavesterPower.sch" 50
-F2 "REG_D0" I L 10050 4175 50 
-F3 "REG_D1" I L 10050 4275 50 
-F4 "DIS_SW" I L 10050 4375 50 
-F5 "PGOOD" O L 10050 5025 50 
-F6 "LLD" O L 10050 5125 50 
+F2 "~BATT_CONN" O L 10050 4500 50 
+F3 "~BATT_CHG" O L 10050 4700 50 
 $EndSheet
 $Comp
 L power:VDD #PWR?
@@ -132,22 +118,6 @@ Wire Wire Line
 	9500 1450 9750 1450
 Text Notes 10050 700  0    50   ~ 0
 Low Power RGB LED \nRequires 2mA If
-Wire Wire Line
-	10050 4175 9475 4175
-Wire Wire Line
-	10050 4275 9475 4275
-Wire Wire Line
-	10050 4375 9475 4375
-Text Label 9475 4175 0    50   ~ 0
-PWR_REG_D0
-Text Label 9475 4275 0    50   ~ 0
-PWR_REG_D1
-Text Label 9475 4375 0    50   ~ 0
-PWR_DIS_SW
-Text Label 9475 5025 0    50   ~ 0
-PWR_PGOOD
-Text Label 9475 5125 0    50   ~ 0
-PWR_LLD
 Wire Wire Line
 	9850 2250 9275 2250
 Wire Wire Line
@@ -266,190 +236,83 @@ Wire Wire Line
 	10150 3500 10150 3550
 NoConn ~ 2550 3250
 NoConn ~ 2550 3350
-NoConn ~ 2550 5350
-Wire Wire Line
-	2550 5550 2375 5550
-Wire Wire Line
-	2375 5550 2375 5650
-Wire Wire Line
-	2375 5650 2550 5650
-$Comp
-L power:GND #PWR?
-U 1 1 60742188
-P 2375 5700
-F 0 "#PWR?" H 2375 5450 50  0001 C CNN
-F 1 "GND" H 2380 5527 50  0000 C CNN
-F 2 "" H 2375 5700 50  0001 C CNN
-F 3 "" H 2375 5700 50  0001 C CNN
-	1    2375 5700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2375 5700 2375 5650
-Connection ~ 2375 5650
-Wire Wire Line
-	3550 1150 3550 1025
-Wire Wire Line
-	3550 1025 3400 1025
-Connection ~ 3400 1025
-Wire Wire Line
-	3400 1025 3400 1150
-Wire Wire Line
-	3700 1150 3700 1025
-Connection ~ 3550 1025
-Wire Wire Line
-	3850 1150 3850 1025
-Wire Wire Line
-	3550 1025 3700 1025
-Connection ~ 3700 1025
-Wire Wire Line
-	3700 1025 3850 1025
-$Comp
-L power:VDD #PWR?
-U 1 1 607478D9
-P 3400 875
-F 0 "#PWR?" H 3400 725 50  0001 C CNN
-F 1 "VDD" H 3417 1048 50  0000 C CNN
-F 2 "" H 3400 875 50  0001 C CNN
-F 3 "" H 3400 875 50  0001 C CNN
-	1    3400 875 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3400 875  3400 1025
-$Comp
-L power:VDDA #PWR?
-U 1 1 60748A1C
-P 4550 800
-F 0 "#PWR?" H 4550 650 50  0001 C CNN
-F 1 "VDDA" H 4567 973 50  0000 C CNN
-F 2 "" H 4550 800 50  0001 C CNN
-F 3 "" H 4550 800 50  0001 C CNN
-	1    4550 800 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 60749C1E
-P 3450 6700
-F 0 "#PWR?" H 3450 6450 50  0001 C CNN
-F 1 "GND" H 3455 6527 50  0000 C CNN
-F 2 "" H 3450 6700 50  0001 C CNN
-F 3 "" H 3450 6700 50  0001 C CNN
-	1    3450 6700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3450 6450 3450 6600
-Wire Wire Line
-	4600 6600 4600 6450
-Connection ~ 3450 6600
-Wire Wire Line
-	3450 6600 3450 6700
-Wire Wire Line
-	4450 6450 4450 6600
-Connection ~ 4450 6600
-Wire Wire Line
-	4450 6600 4600 6600
-Wire Wire Line
-	4300 6450 4300 6600
-Connection ~ 4300 6600
-Wire Wire Line
-	4300 6600 4450 6600
-Wire Wire Line
-	4150 6450 4150 6600
-Connection ~ 4150 6600
-Wire Wire Line
-	4150 6600 4300 6600
-Wire Wire Line
-	4000 6450 4000 6600
-Wire Wire Line
-	3450 6600 3850 6600
-Connection ~ 4000 6600
-Wire Wire Line
-	4000 6600 4150 6600
-Connection ~ 3850 6600
-Wire Wire Line
-	3850 6600 4000 6600
-Wire Wire Line
-	3850 6450 3850 6600
 $Comp
 L PatchV2:ESDALC6V1-1U2 CR?
 U 1 1 6075289B
-P 5850 6225
-F 0 "CR?" V 5997 6329 60  0000 L CNN
-F 1 "ESDALC6V1-1U2" H 5850 6075 60  0000 L CNN
-F 2 "PatchV2:ESDALC6V1-1U2" H 5900 5990 60  0001 C CNN
-F 3 "" H 5850 6225 60  0001 C CNN
-F 4 "497-8752-1-ND" H 5850 6225 50  0001 C CNN "Digi-Key_PN"
-	1    5850 6225
+P 6350 5875
+F 0 "CR?" V 6497 5979 60  0000 L CNN
+F 1 "ESDALC6V1-1U2" H 6350 5725 60  0000 L CNN
+F 2 "PatchV2:ESDALC6V1-1U2" H 6400 5640 60  0001 C CNN
+F 3 "" H 6350 5875 60  0001 C CNN
+F 4 "497-8752-1-ND" H 6350 5875 50  0001 C CNN "Digi-Key_PN"
+	1    6350 5875
 	0    1    1    0   
 $EndComp
 $Comp
 L PatchV2:KMR742NGLFS S?
 U 1 1 60757681
-P 6525 6050
-F 0 "S?" H 7125 6315 50  0000 C CNN
-F 1 "KMR742NGLFS" H 7125 6224 50  0000 C CNN
-F 2 "PatchV2:KMR742NGLFS" H 7575 6150 50  0001 L CNN
-F 3 "https://www.ckswitches.com/media/1908/kmr7.pdf" H 7575 6050 50  0001 L CNN
-F 4 "KMR742NGLFS (Tactile Switches)" H 7575 5950 50  0001 L CNN "Description"
-F 5 "2.5" H 7575 5850 50  0001 L CNN "Height"
-F 6 "611-KMR742NGLFS" H 7575 5750 50  0001 L CNN "Mouser Part Number"
-F 7 "https://www.mouser.co.uk/ProductDetail/CK/KMR742NGLFS/?qs=HXFqYaX1Q2yYCMF0Xq%252B3Kw%3D%3D" H 7575 5650 50  0001 L CNN "Mouser Price/Stock"
-F 8 "C & K COMPONENTS" H 7575 5550 50  0001 L CNN "Manufacturer_Name"
-F 9 "KMR742NGLFS" H 7575 5450 50  0001 L CNN "Manufacturer_Part_Number"
-	1    6525 6050
+P 7025 5700
+F 0 "S?" H 7625 5965 50  0000 C CNN
+F 1 "KMR742NGLFS" H 7625 5874 50  0000 C CNN
+F 2 "PatchV2:KMR742NGLFS" H 8075 5800 50  0001 L CNN
+F 3 "https://www.ckswitches.com/media/1908/kmr7.pdf" H 8075 5700 50  0001 L CNN
+F 4 "KMR742NGLFS (Tactile Switches)" H 8075 5600 50  0001 L CNN "Description"
+F 5 "2.5" H 8075 5500 50  0001 L CNN "Height"
+F 6 "611-KMR742NGLFS" H 8075 5400 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/CK/KMR742NGLFS/?qs=HXFqYaX1Q2yYCMF0Xq%252B3Kw%3D%3D" H 8075 5300 50  0001 L CNN "Mouser Price/Stock"
+F 8 "C & K COMPONENTS" H 8075 5200 50  0001 L CNN "Manufacturer_Name"
+F 9 "KMR742NGLFS" H 8075 5100 50  0001 L CNN "Manufacturer_Part_Number"
+	1    7025 5700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5850 6625 5850 6675
+	6350 6275 6350 6325
 Wire Wire Line
-	5850 6675 6225 6675
+	6350 6325 6725 6325
 Wire Wire Line
-	6225 6675 6225 6475
-Connection ~ 5850 6675
+	6725 6325 6725 6125
+Connection ~ 6350 6325
 Wire Wire Line
-	5850 6675 5850 6725
+	6350 6325 6350 6375
 Wire Wire Line
-	5550 6050 5850 6050
+	6050 5700 6350 5700
 Wire Wire Line
-	5850 6050 5850 6225
-Connection ~ 5850 6050
+	6350 5700 6350 5875
+Connection ~ 6350 5700
 Wire Wire Line
-	5850 6050 6225 6050
-Connection ~ 6225 6050
+	6350 5700 6725 5700
+Connection ~ 6725 5700
 Wire Wire Line
-	6225 6050 6450 6050
+	6725 5700 6950 5700
 Wire Wire Line
-	6225 6050 6225 6275
+	6725 5700 6725 5925
 Wire Wire Line
-	6450 6050 6450 6150
+	6950 5700 6950 5800
 Wire Wire Line
-	6450 6150 6525 6150
-Connection ~ 6450 6050
+	6950 5800 7025 5800
+Connection ~ 6950 5700
 Wire Wire Line
-	6450 6050 6525 6050
+	6950 5700 7025 5700
 $Comp
 L power:GND #PWR?
 U 1 1 6077443B
-P 7800 6275
-F 0 "#PWR?" H 7800 6025 50  0001 C CNN
-F 1 "GND" H 7805 6102 50  0000 C CNN
-F 2 "" H 7800 6275 50  0001 C CNN
-F 3 "" H 7800 6275 50  0001 C CNN
-	1    7800 6275
+P 8300 5925
+F 0 "#PWR?" H 8300 5675 50  0001 C CNN
+F 1 "GND" H 8305 5752 50  0000 C CNN
+F 2 "" H 8300 5925 50  0001 C CNN
+F 3 "" H 8300 5925 50  0001 C CNN
+	1    8300 5925
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7725 6050 7800 6050
+	8225 5700 8300 5700
 Wire Wire Line
-	7800 6050 7800 6150
+	8300 5700 8300 5800
 Wire Wire Line
-	7725 6150 7800 6150
-Connection ~ 7800 6150
+	8225 5800 8300 5800
+Connection ~ 8300 5800
 Wire Wire Line
-	7800 6150 7800 6275
+	8300 5800 8300 5925
 $Comp
 L PatchV2:KMR742NGLFS S?
 U 1 1 60778133
@@ -514,19 +377,19 @@ Wire Wire Line
 	7575 950  7350 950 
 Text Label 7350 950  0    50   ~ 0
 BTN
-Text Label 5925 6050 0    50   ~ 0
+Text Label 6050 5700 0    50   ~ 0
 NRST
 $Comp
 L Device:C_Small C?
 U 1 1 6075F1CC
-P 6225 6375
+P 6725 6025
 AR Path="/605A6F24/6075F1CC" Ref="C?"  Part="1" 
 AR Path="/6075F1CC" Ref="C?"  Part="1" 
-F 0 "C?" H 6317 6421 50  0000 L CNN
-F 1 "0.1uF" H 6317 6330 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0402_1005Metric" H 6225 6375 50  0001 C CNN
-F 3 "~" H 6225 6375 50  0001 C CNN
-	1    6225 6375
+F 0 "C?" H 6817 6071 50  0000 L CNN
+F 1 "0.1uF" H 6817 5980 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 6725 6025 50  0001 C CNN
+F 3 "~" H 6725 6025 50  0001 C CNN
+	1    6725 6025
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -569,108 +432,6 @@ $EndComp
 Wire Wire Line
 	3025 1075 3025 1125
 Wire Wire Line
-	4550 800  4550 1150
-$Comp
-L Device:C_Small C?
-U 1 1 6079C4BE
-P 700 7300
-AR Path="/605A6F24/6079C4BE" Ref="C?"  Part="1" 
-AR Path="/6079C4BE" Ref="C?"  Part="1" 
-F 0 "C?" H 792 7346 50  0000 L CNN
-F 1 "3.3pF" H 792 7255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0201_0603Metric" H 700 7300 50  0001 C CNN
-F 3 "~" H 700 7300 50  0001 C CNN
-	1    700  7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	700  7200 700  6975
-Wire Wire Line
-	700  7400 700  7525
-$Comp
-L power:GND #PWR?
-U 1 1 607A0BCE
-P 700 7525
-F 0 "#PWR?" H 700 7275 50  0001 C CNN
-F 1 "GND" H 705 7352 50  0000 C CNN
-F 2 "" H 700 7525 50  0001 C CNN
-F 3 "" H 700 7525 50  0001 C CNN
-	1    700  7525
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C?
-U 1 1 607A6CB9
-P 1100 7300
-AR Path="/605A6F24/607A6CB9" Ref="C?"  Part="1" 
-AR Path="/607A6CB9" Ref="C?"  Part="1" 
-F 0 "C?" H 1192 7346 50  0000 L CNN
-F 1 "3.3pF" H 1192 7255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0201_0603Metric" H 1100 7300 50  0001 C CNN
-F 3 "~" H 1100 7300 50  0001 C CNN
-	1    1100 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1100 7400 1100 7525
-$Comp
-L power:GND #PWR?
-U 1 1 607A6CC1
-P 1100 7525
-F 0 "#PWR?" H 1100 7275 50  0001 C CNN
-F 1 "GND" H 1105 7352 50  0000 C CNN
-F 2 "" H 1100 7525 50  0001 C CNN
-F 3 "" H 1100 7525 50  0001 C CNN
-	1    1100 7525
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C?
-U 1 1 607A98A5
-P 1475 7300
-AR Path="/605A6F24/607A98A5" Ref="C?"  Part="1" 
-AR Path="/607A98A5" Ref="C?"  Part="1" 
-F 0 "C?" H 1567 7346 50  0000 L CNN
-F 1 "3.3pF" H 1567 7255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0201_0603Metric" H 1475 7300 50  0001 C CNN
-F 3 "~" H 1475 7300 50  0001 C CNN
-	1    1475 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1475 7400 1475 7525
-$Comp
-L power:GND #PWR?
-U 1 1 607A98AD
-P 1475 7525
-F 0 "#PWR?" H 1475 7275 50  0001 C CNN
-F 1 "GND" H 1480 7352 50  0000 C CNN
-F 2 "" H 1475 7525 50  0001 C CNN
-F 3 "" H 1475 7525 50  0001 C CNN
-	1    1475 7525
-	1    0    0    -1  
-$EndComp
-Text Label 700  6975 3    50   ~ 0
-PB10
-Wire Wire Line
-	1100 7200 1100 6975
-Text Label 1100 6975 3    50   ~ 0
-PB11
-Wire Wire Line
-	1475 7200 1475 6975
-Text Label 1475 6975 3    50   ~ 0
-PC5
-Wire Notes Line
-	500  6700 1800 6700
-Wire Notes Line
-	1800 6700 1800 7775
-Wire Notes Line
-	1800 7775 500  7775
-Wire Notes Line
-	500  7775 500  6700
-Text Notes 575  6900 0    50   ~ 0
-Place these caps as close to \npins as possible
-Wire Wire Line
 	2550 4250 2125 4250
 Text Label 2125 4250 0    50   ~ 0
 PB10
@@ -679,83 +440,32 @@ Wire Wire Line
 Text Label 2125 4350 0    50   ~ 0
 PB11
 Wire Wire Line
-	5550 2050 5975 2050
-Text Label 5975 2050 2    50   ~ 0
-PC5
-Wire Wire Line
-	2550 2850 2125 2850
-Text Label 2125 2850 0    50   ~ 0
-SW_DIO
-Wire Wire Line
-	2550 2950 2125 2950
-Text Label 2125 2950 0    50   ~ 0
-SW_CLK
-Wire Wire Line
-	2550 3750 2125 3750
-Text Label 2125 3750 0    50   ~ 0
+	4050 3300 4050 2875
+Text Label 4050 2875 3    50   ~ 0
 SD_MOSI
 Wire Wire Line
-	2550 3650 2125 3650
-Text Label 2125 3650 0    50   ~ 0
+	4150 3300 4150 2875
+Text Label 4150 2875 3    50   ~ 0
 SD_MISO
 Wire Wire Line
-	2550 3550 2125 3550
-Text Label 2125 3550 0    50   ~ 0
+	4350 3300 4350 2875
+Text Label 4350 2875 3    50   ~ 0
 SD_CLK
 Wire Wire Line
-	2550 3950 2125 3950
-Text Label 2125 3950 0    50   ~ 0
+	4250 3300 4250 2875
+Text Label 4250 2875 3    50   ~ 0
 SD_CS
-Wire Wire Line
-	5550 1550 5975 1550
-Text Label 5975 1550 2    50   ~ 0
+Text Label 3100 4300 0    50   ~ 0
 AFE_CH1
-Wire Wire Line
-	5550 1650 5975 1650
-Text Label 5975 1650 2    50   ~ 0
+Text Label 3100 4200 0    50   ~ 0
 AFE_CH2
 Text Notes 6475 1600 2    50   ~ 0
 ADC IN1/2\n
-$Comp
-L Device:R R?
-U 1 1 607ED7A7
-P 2125 7300
-AR Path="/605A6F24/607ED7A7" Ref="R?"  Part="1" 
-AR Path="/607ED7A7" Ref="R?"  Part="1" 
-F 0 "R?" V 2025 7400 50  0000 R CNN
-F 1 "10k" V 2125 7375 50  0000 R CNN
-F 2 "Resistor_SMD:R_0402_1005Metric" V 2055 7300 50  0001 C CNN
-F 3 "~" H 2125 7300 50  0001 C CNN
-F 4 "A130031CT-ND" H 2125 7300 50  0001 C CNN "Digi-Key_PN"
-	1    2125 7300
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 607F0831
-P 2125 7525
-F 0 "#PWR?" H 2125 7275 50  0001 C CNN
-F 1 "GND" H 2130 7352 50  0000 C CNN
-F 2 "" H 2125 7525 50  0001 C CNN
-F 3 "" H 2125 7525 50  0001 C CNN
-	1    2125 7525
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	2125 7450 2125 7525
-Wire Wire Line
-	2125 7150 2125 6875
-Text Label 2125 6875 3    50   ~ 0
-BOOT0
-Wire Wire Line
-	5550 5950 5975 5950
-Text Label 5975 5950 2    50   ~ 0
-BOOT0
-Wire Wire Line
-	2550 1550 2125 1550
-Text Label 2125 1550 0    50   ~ 0
+	4450 3300 4450 2875
+Text Label 4450 2875 3    50   ~ 0
 BTN
-Text Notes 2050 1550 2    50   ~ 0
+Text Notes 4450 2850 1    50   ~ 0
 GPIO_EXTI0
 Text Label 6100 2550 2    50   ~ 0
 PWR_REG_D0
@@ -789,17 +499,6 @@ Wire Wire Line
 	2550 2650 2125 2650
 Text Label 2125 2650 0    50   ~ 0
 PWR_PGOOD
-$Comp
-L Connector:TestPoint TP?
-U 1 1 6083EA8B
-P 2625 7225
-F 0 "TP?" H 2683 7297 50  0000 L CNN
-F 1 "TestPoint" H 2683 7252 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 2825 7225 50  0001 C CNN
-F 3 "~" H 2825 7225 50  0001 C CNN
-	1    2625 7225
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9375 5700 9375 5775
 Wire Wire Line
@@ -820,10 +519,6 @@ Wire Wire Line
 Wire Wire Line
 	9375 5975 10050 5975
 Wire Wire Line
-	9475 5025 10050 5025
-Wire Wire Line
-	9475 5125 10050 5125
-Wire Wire Line
 	2550 3850 2125 3850
 Text Label 2125 3850 0    50   ~ 0
 GPIO0
@@ -839,54 +534,13 @@ Wire Wire Line
 	5550 2150 5975 2150
 Text Label 5975 2150 2    50   ~ 0
 GPIO3
-Wire Wire Line
-	2625 7225 2625 7575
-Text Label 2625 7575 1    50   ~ 0
+Text Label 3950 5200 1    50   ~ 0
 GPIO0
-$Comp
-L Connector:TestPoint TP?
-U 1 1 60874B6B
-P 2875 7225
-F 0 "TP?" H 2933 7297 50  0000 L CNN
-F 1 "TestPoint" H 2933 7252 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3075 7225 50  0001 C CNN
-F 3 "~" H 3075 7225 50  0001 C CNN
-	1    2875 7225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2875 7225 2875 7575
-Text Label 2875 7575 1    50   ~ 0
+Text Label 4050 5200 1    50   ~ 0
 GPIO1
-$Comp
-L Connector:TestPoint TP?
-U 1 1 608797EC
-P 3125 7225
-F 0 "TP?" H 3183 7297 50  0000 L CNN
-F 1 "TestPoint" H 3183 7252 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3325 7225 50  0001 C CNN
-F 3 "~" H 3325 7225 50  0001 C CNN
-	1    3125 7225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3125 7225 3125 7575
-Text Label 3125 7575 1    50   ~ 0
+Text Label 4150 5200 1    50   ~ 0
 GPIO2
-$Comp
-L Connector:TestPoint TP?
-U 1 1 6088324B
-P 3375 7225
-F 0 "TP?" H 3433 7297 50  0000 L CNN
-F 1 "TestPoint" H 3433 7252 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.5x1.5mm" H 3575 7225 50  0001 C CNN
-F 3 "~" H 3575 7225 50  0001 C CNN
-	1    3375 7225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3375 7225 3375 7575
-Text Label 3375 7575 1    50   ~ 0
+Text Label 4250 5200 1    50   ~ 0
 GPIO3
 $Comp
 L Connector:TestPoint TP?
@@ -972,61 +626,16 @@ F 3 "" H 9100 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Net-Tie_3_Tee NT?
-U 1 1 609390EC
-P 8250 5125
-F 0 "NT?" H 8250 5306 50  0000 C CNN
-F 1 "Net-Tie_3_Tee" H 8250 5215 50  0000 C CNN
-F 2 "PatchV2:gnd_tie" H 8250 5125 50  0001 C CNN
-F 3 "~" H 8250 5125 50  0001 C CNN
-	1    8250 5125
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 60939FC7
-P 8525 5150
-F 0 "#PWR?" H 8525 4900 50  0001 C CNN
-F 1 "GNDA" H 8530 4977 50  0000 C CNN
-F 2 "" H 8525 5150 50  0001 C CNN
-F 3 "" H 8525 5150 50  0001 C CNN
-	1    8525 5150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8350 5125 8525 5125
-Wire Wire Line
-	8525 5125 8525 5150
-$Comp
 L power:GND #PWR?
 U 1 1 60768504
-P 5850 6725
-F 0 "#PWR?" H 5850 6475 50  0001 C CNN
-F 1 "GND" H 5855 6552 50  0000 C CNN
-F 2 "" H 5850 6725 50  0001 C CNN
-F 3 "" H 5850 6725 50  0001 C CNN
-	1    5850 6725
+P 6350 6375
+F 0 "#PWR?" H 6350 6125 50  0001 C CNN
+F 1 "GND" H 6355 6202 50  0000 C CNN
+F 2 "" H 6350 6375 50  0001 C CNN
+F 3 "" H 6350 6375 50  0001 C CNN
+	1    6350 6375
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8250 5300 8250 5225
-$Comp
-L power:GNDS #PWR?
-U 1 1 6094C2CC
-P 7975 5175
-AR Path="/605A6F24/6094C2CC" Ref="#PWR?"  Part="1" 
-AR Path="/6094C2CC" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 7975 4925 50  0001 C CNN
-F 1 "GNDS" H 7980 5002 50  0000 C CNN
-F 2 "" H 7975 5175 50  0001 C CNN
-F 3 "" H 7975 5175 50  0001 C CNN
-	1    7975 5175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7975 5175 7975 5125
-Wire Wire Line
-	7975 5125 8150 5125
 $Comp
 L Connector_Generic:Conn_01x05 J?
 U 1 1 6096D3E2
@@ -1055,17 +664,6 @@ Wire Wire Line
 	8100 3325 8200 3325
 $Comp
 L power:GND #PWR?
-U 1 1 6094504F
-P 8250 5300
-F 0 "#PWR?" H 8250 5050 50  0001 C CNN
-F 1 "GND" H 8255 5127 50  0000 C CNN
-F 2 "" H 8250 5300 50  0001 C CNN
-F 3 "" H 8250 5300 50  0001 C CNN
-	1    8250 5300
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
 U 1 1 60979EFB
 P 8100 3775
 F 0 "#PWR?" H 8100 3525 50  0001 C CNN
@@ -1091,4 +689,179 @@ Wire Wire Line
 	8200 3625 7825 3625
 Text Label 7825 3625 0    50   ~ 0
 SW_CLK
+Wire Wire Line
+	10050 4500 9500 4500
+Wire Wire Line
+	10050 4700 9500 4700
+Text Label 9500 4500 0    50   ~ 0
+~BATT_CONN
+Text Label 9500 4700 0    50   ~ 0
+~BATT_CHG
+$Comp
+L PatchV2:LoRa-E5 U?
+U 1 1 617BD4F9
+P 4250 4000
+F 0 "U?" H 4200 4100 50  0000 L CNN
+F 1 "LoRa-E5" H 4050 4000 50  0000 L CNN
+F 2 "PatchV2:LoRa-E5" H 4250 4000 50  0001 C CNN
+F 3 "https://files.seeedstudio.com/products/317990687/res/LoRa-E5%20module%20datasheet_V1.0.pdf" H 4250 4000 50  0001 C CNN
+	1    4250 4000
+	1    0    0    -1  
+$EndComp
+Text Label 5400 4100 2    50   ~ 0
+NRST
+Text Label 3100 3900 0    50   ~ 0
+SW_DIO
+Text Label 3100 4000 0    50   ~ 0
+SW_CLK
+Wire Wire Line
+	3550 3900 3100 3900
+Wire Wire Line
+	3550 4000 3100 4000
+Wire Wire Line
+	4950 4100 5400 4100
+Wire Wire Line
+	3550 3700 2950 3700
+Wire Wire Line
+	2950 3700 2950 3500
+Wire Wire Line
+	3550 3800 2950 3800
+Wire Wire Line
+	2950 3800 2950 3900
+$Comp
+L power:VDD #PWR?
+U 1 1 6184DB0B
+P 2950 3500
+F 0 "#PWR?" H 2950 3350 50  0001 C CNN
+F 1 "VDD" H 2965 3673 50  0000 C CNN
+F 2 "" H 2950 3500 50  0001 C CNN
+F 3 "" H 2950 3500 50  0001 C CNN
+	1    2950 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6185DE60
+P 2950 3900
+F 0 "#PWR?" H 2950 3650 50  0001 C CNN
+F 1 "GND" H 2955 3727 50  0000 C CNN
+F 2 "" H 2950 3900 50  0001 C CNN
+F 3 "" H 2950 3900 50  0001 C CNN
+	1    2950 3900
+	1    0    0    -1  
+$EndComp
+Text Label 4350 5200 1    50   ~ 0
+LPUART_TX
+Text Label 4450 5200 1    50   ~ 0
+LPUART_RX
+$Comp
+L power:GND #PWR?
+U 1 1 6186949F
+P 4550 5200
+F 0 "#PWR?" H 4550 4950 50  0001 C CNN
+F 1 "GND" H 4555 5027 50  0000 C CNN
+F 2 "" H 4550 5200 50  0001 C CNN
+F 3 "" H 4550 5200 50  0001 C CNN
+	1    4550 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 4700 4550 5200
+Wire Wire Line
+	4350 4700 4350 5200
+Wire Wire Line
+	4450 4700 4450 5200
+Wire Wire Line
+	3550 4200 3100 4200
+Wire Wire Line
+	3550 4300 3100 4300
+Wire Wire Line
+	3950 4700 3950 5200
+Wire Wire Line
+	4050 4700 4050 5200
+Wire Wire Line
+	4150 4700 4150 5200
+Wire Wire Line
+	4250 4700 4250 5200
+Text Notes 4250 5650 1    50   ~ 0
+GPIO_EXTI5
+NoConn ~ 3950 3300
+$Comp
+L power:GND #PWR?
+U 1 1 61920FC9
+P 4550 2850
+F 0 "#PWR?" H 4550 2600 50  0001 C CNN
+F 1 "GND" H 4555 2677 50  0000 C CNN
+F 2 "" H 4550 2850 50  0001 C CNN
+F 3 "" H 4550 2850 50  0001 C CNN
+	1    4550 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4550 3300 4550 2850
+$Comp
+L Connector_Generic:Conn_02x04_Counter_Clockwise J?
+U 1 1 6193F88A
+P 2350 6600
+F 0 "J?" H 2400 6825 50  0000 C CNN
+F 1 "Conn_02x04_Counter_Clockwise" H 2400 6826 50  0001 C CNN
+F 2 "" H 2350 6600 50  0001 C CNN
+F 3 "~" H 2350 6600 50  0001 C CNN
+	1    2350 6600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 6500 3000 6500
+Wire Wire Line
+	3000 6500 3000 6300
+$Comp
+L power:VDD #PWR?
+U 1 1 61944A0F
+P 3000 6300
+F 0 "#PWR?" H 3000 6150 50  0001 C CNN
+F 1 "VDD" H 3015 6473 50  0000 C CNN
+F 2 "" H 3000 6300 50  0001 C CNN
+F 3 "" H 3000 6300 50  0001 C CNN
+	1    3000 6300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 619456DA
+P 3000 7000
+F 0 "#PWR?" H 3000 6750 50  0001 C CNN
+F 1 "GND" H 3005 6827 50  0000 C CNN
+F 2 "" H 3000 7000 50  0001 C CNN
+F 3 "" H 3000 7000 50  0001 C CNN
+	1    3000 7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 6800 3000 7000
+Text Label 1650 6500 0    50   ~ 0
+GPIO0
+Text Label 1650 6600 0    50   ~ 0
+GPIO1
+Text Label 1650 6700 0    50   ~ 0
+GPIO2
+Text Label 1650 6800 0    50   ~ 0
+GPIO3
+Wire Wire Line
+	2150 6500 1650 6500
+Wire Wire Line
+	2150 6600 1650 6600
+Wire Wire Line
+	2150 6700 1650 6700
+Wire Wire Line
+	2150 6800 1650 6800
+Wire Wire Line
+	2650 6800 3000 6800
+Text Label 3100 6700 2    50   ~ 0
+AFE_CH1
+Text Label 3100 6600 2    50   ~ 0
+AFE_CH2
+Wire Wire Line
+	2650 6600 3100 6600
+Wire Wire Line
+	2650 6700 3100 6700
 $EndSCHEMATC

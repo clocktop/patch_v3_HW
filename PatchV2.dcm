@@ -1,5 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP LoRa-E5
+F https://files.seeedstudio.com/products/317990687/res/LoRa-E5%20module%20datasheet_V1.0.pdf
+$ENDCMP
+#
 $CMP SPV1050TTR
 F https://www.st.com/content/ccc/resource/technical/document/datasheet/3e/91/0f/7c/32/3e/46/dd/DM00100984.pdf/files/DM00100984.pdf/jcr:content/translations/en.DM00100984.pdf
 $ENDCMP

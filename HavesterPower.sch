@@ -488,7 +488,7 @@ U 1 1 6130BD9C
 P 7350 2600
 F 0 "JP?" H 7350 2839 50  0000 C CNN
 F 1 "Jumper_NC_Dual" H 7350 2748 50  0000 C CNN
-F 2 "" H 7350 2600 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 7350 2600 50  0001 C CNN
 F 3 "~" H 7350 2600 50  0001 C CNN
 	1    7350 2600
 	1    0    0    -1  
@@ -566,7 +566,7 @@ U 1 1 613C8527
 P 6350 2050
 F 0 "JP?" H 6350 2314 50  0000 C CNN
 F 1 "Jumper" H 6350 2223 50  0000 C CNN
-F 2 "" H 6350 2050 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6350 2050 50  0001 C CNN
 F 3 "~" H 6350 2050 50  0001 C CNN
 	1    6350 2050
 	1    0    0    -1  
