@@ -519,16 +519,16 @@ $EndComp
 Wire Wire Line
 	8450 2375 8450 2425
 Wire Wire Line
-	7725 2425 7350 2425
+	7725 2625 7350 2625
 Wire Wire Line
 	7725 2525 7350 2525
-Text Label 7350 2425 0    50   ~ 0
+Text Label 7350 2625 0    50   ~ 0
 NRST
 Text Label 7350 2525 0    50   ~ 0
 SW_DIO
 Wire Wire Line
-	7725 2625 7350 2625
-Text Label 7350 2625 0    50   ~ 0
+	7725 2425 7350 2425
+Text Label 7350 2425 0    50   ~ 0
 SW_CLK
 Text Label 9425 4500 0    50   ~ 0
 ~BATT_CONN
@@ -678,9 +678,9 @@ Wire Wire Line
 	1400 1400 900  1400
 Wire Wire Line
 	1900 1500 2250 1500
-Text Label 2350 1400 2    50   ~ 0
-AFE_CH1
 Text Label 2350 1200 2    50   ~ 0
+AFE_CH1
+Text Label 2350 1400 2    50   ~ 0
 AFE_CH2
 Wire Wire Line
 	1900 1200 2350 1200
@@ -879,14 +879,14 @@ F 3 "~" H 7925 2525 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8225 2425 8450 2425
-Text Label 8725 2625 2    50   ~ 0
-LPUART_TX
 Text Label 8725 2525 2    50   ~ 0
+LPUART_TX
+Text Label 8725 2625 2    50   ~ 0
 LPUART_RX
 Wire Wire Line
-	8225 2625 8725 2625
-Wire Wire Line
 	8225 2525 8725 2525
+Wire Wire Line
+	8225 2625 8725 2625
 Wire Wire Line
 	7450 2775 7450 2725
 $Comp
